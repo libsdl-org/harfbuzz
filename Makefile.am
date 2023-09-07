@@ -4,7 +4,7 @@ NULL =
 
 ACLOCAL_AMFLAGS = -I m4
 
-SUBDIRS = src util test perf docs
+SUBDIRS = src util perf docs
 
 EXTRA_DIST = \
 	autogen.sh \

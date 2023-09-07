@@ -431,10 +431,6 @@ if not get_option('utilities').disabled()
   subdir('util')
 endif
 
-if not get_option('tests').disabled()
-  subdir('test')
-endif
-
 if not get_option('benchmark').disabled()
   subdir('perf')
 endif
