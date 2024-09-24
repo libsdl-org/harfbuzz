@@ -1036,7 +1036,8 @@ struct ChainSubtable
   bool apply (hb_aat_apply_context_t *c) const
   {
     TRACE_APPLY (this);
-    hb_sanitize_with_object_t with (&c->sanitizer, this);
+    // Disabled for https://github.com/harfbuzz/harfbuzz/issues/4873
+    //hb_sanitize_with_object_t with (&c->sanitizer, this);
     return_trace (dispatch (c));
   }
 
@@ -1049,7 +1050,8 @@ struct ChainSubtable
 	  c->check_range (this, length)))
       return_trace (false);
 
-    hb_sanitize_with_object_t with (c, this);
+    // Disabled for https://github.com/harfbuzz/harfbuzz/issues/4873
+    //hb_sanitize_with_object_t with (c, this);
     return_trace (dispatch (c));
   }
 
