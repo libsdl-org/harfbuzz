@@ -111,7 +111,7 @@ endif ()
 set(PC_REQUIRES_PRIV "")
 set(PC_LIBS_PRIV "")
 
-if (NOT MSVC)
+if (NOT MSVC AND NOT MINGW) # MINGW added by SDL developers
   set(THREADS_PREFER_PTHREAD_FLAG ON)
   find_package(Threads)
   if (CMAKE_USE_PTHREADS_INIT)
