@@ -8,7 +8,7 @@
 #define HAVE_ATEXIT 1
 
 /* Have cairo graphics library */
-#define HAVE_CAIRO 1
+/* #undef HAVE_CAIRO */
 
 /* Have cairo-ft support in cairo graphics library */
 /* #undef HAVE_CAIRO_FT */
@@ -138,7 +138,7 @@
 #define HAVE_UNISCRIBE 1
 
 /* Define to 1 if you have the <unistd.h> header file. */
-#ifdef __MINGW32__
+#ifdef __MINGW32__ /**/
 #define HAVE_UNISTD_H 1
 #endif
 
@@ -179,7 +179,7 @@
 /* #define PACKAGE_URL "http://harfbuzz.org/" */
 
 /* Define to the version of this package. */
-/* #define PACKAGE_VERSION "8.0.1" */
+/* #define PACKAGE_VERSION "8.1.1" */
 
 /* Define to necessary symbol if this constant uses a non-standard name on
    your system. */

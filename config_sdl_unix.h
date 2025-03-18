@@ -168,7 +168,7 @@
 /* #define PACKAGE_URL "http://harfbuzz.org/" */
 
 /* Define to the version of this package. */
-/* #define PACKAGE_VERSION "8.0.1" */
+/* #define PACKAGE_VERSION "8.1.1" */
 
 /* Define to necessary symbol if this constant uses a non-standard name on
    your system. */
