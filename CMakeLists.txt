@@ -477,6 +477,9 @@ target_link_libraries(harfbuzz ${THIRD_PARTY_LIBS})
 target_include_directories(harfbuzz PUBLIC
                            "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>"
                            "$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}/harfbuzz>")
+if(NOT BUILD_SHARED_LIBS)
+ set_target_properties(harfbuzz PROPERTIES CXX_VISIBILITY_PRESET "hidden")
+endif()
 set_target_properties(harfbuzz PROPERTIES VISIBILITY_INLINES_HIDDEN TRUE)
 if (HB_HAVE_FREETYPE AND TARGET freetype)
   target_link_libraries(harfbuzz freetype)
