@@ -474,6 +474,9 @@ endif ()
 ## Define harfbuzz library
 add_library(harfbuzz ${project_sources} ${project_extra_sources} ${project_headers})
 target_link_libraries(harfbuzz ${THIRD_PARTY_LIBS})
+if (MINGW)
+    target_compile_options(harfbuzz PRIVATE "-Wa,-mbig-obj")
+endif()
 target_include_directories(harfbuzz PUBLIC
                            "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>"
                            "$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}/harfbuzz>")
@@ -502,6 +505,9 @@ if (HB_BUILD_SUBSET)
   add_dependencies(harfbuzz-subset harfbuzz)
   target_link_libraries(harfbuzz-subset harfbuzz ${THIRD_PARTY_LIBS})
   set_target_properties(harfbuzz-subset PROPERTIES VISIBILITY_INLINES_HIDDEN TRUE)
+  if (MINGW)
+    target_compile_options(harfbuzz-subset PRIVATE "-Wa,-mbig-obj")
+  endif()
 endif ()
 
 if (UNIX OR MINGW OR VITA)
